@@ -8,18 +8,20 @@ const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
 
   const App = new TSDocGen();
 
-  const result = await App.generateDocumentation();
+  const result = App.generateDocumentation();
 
-  for (const projectName in result) {
-    const docs = result[projectName];
+  for (const index in result) {
+    const project = result[index];
 
-    // const component = resolve(__dirname, '../src/themes/ant-design/App.tsx');
-    const component = resolve(process.cwd(), 'node_modules', 'tsdocgen-themes', 'dist', 'ant-design', 'App.js');
-  
-    createPage({
-        path: `${projectName}`,
-        component: component,
-        context: { docs: [docs[0].docs[0].toJSON()], name: projectName }
+    project.forEachSourceDoc((doc) => {
+      // const component = resolve(__dirname, '../src/themes/ant-design/App.tsx');
+      const component = resolve(process.cwd(), 'node_modules', 'tsdocgen-themes', 'dist', 'ant-design', 'App.js');
+        
+      createPage({
+          path: `${project.name}/${doc.type}/${doc.name}.html`,
+          component: component,
+          context: { doc: doc, name: project.name }
+      });
     });
   }
 }
