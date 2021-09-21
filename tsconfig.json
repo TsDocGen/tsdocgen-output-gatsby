@@ -1,0 +1,38 @@
+{
+    "compilerOptions": {
+        "module": "CommonJS",
+        "lib": [
+            "es2019", 
+            "es2020", 
+            "dom",
+            "dom.iterable"
+        ],
+        "target": "ES2019",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "strict": true,
+        "alwaysStrict": true,
+        "resolveJsonModule": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "forceConsistentCasingInFileNames": true,
+        "importsNotUsedAsValues": "preserve",
+        "preserveConstEnums": true,
+        "declaration": true,
+        "sourceMap": true,
+        "isolatedModules": true,
+        "noImplicitOverride": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "outDir": "dist",
+        "jsx": "react-jsx",
+        "jsxImportSource": "react",
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node",
+        "skipLibCheck": true
+    },
+    "include": ["src", "scripts", "src/gatsby"],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ],
+}
