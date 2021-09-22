@@ -5,6 +5,4 @@ require('ts-node').register();
 
 const createPages = require('./src/createPages');
 
-console.log(createPages);
-
 exports.createPages = createPages;

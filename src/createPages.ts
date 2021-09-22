@@ -13,14 +13,14 @@ const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
   for (const index in result) {
     const project = result[index];
 
-    project.forEachSourceDoc((doc) => {
+    project.forEachDoc((doc) => {
       // const component = resolve(__dirname, '../src/themes/ant-design/App.tsx');
-      const component = resolve(process.cwd(), 'node_modules', 'tsdocgen-themes', 'dist', 'ant-design', 'App.js');
+      const component = resolve(project.resolveThemePath(), 'Page', 'index.js');
         
       createPage({
           path: `${project.name}/${doc.type}/${doc.name}.html`,
           component: component,
-          context: { doc: doc, name: project.name }
+          context: { doc: doc, name: project.name },
       });
     });
   }
