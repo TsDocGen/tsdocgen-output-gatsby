@@ -15,7 +15,7 @@ const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
 
     project.forEachDoc((doc) => {
       // const component = resolve(__dirname, '../src/themes/ant-design/App.tsx');
-      const component = resolve(project.resolveThemePath(), 'Page', 'index.js');
+      const component = resolve(project.resolveThemePath(), 'Page.js');
         
       createPage({
           path: `${project.name}/${doc.type}/${doc.name}.html`,
