@@ -1,1 +1,1 @@
-require('antd/dist/antd.css');
+module.exports = exports = require('./dist/gatsby-browser');
