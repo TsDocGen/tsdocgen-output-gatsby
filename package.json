@@ -6,21 +6,18 @@
   "types": "dist/src/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "exec": "ts-node ./scripts/tsdocgen",
     "build": "rm -rf dist && tsc -p tsconfig.json",
-    "postinstall": "npm run build",
-    "gatsby:develop": "gatsby develop",
-    "gatsby:start": "gatsby develop",
-    "gatsby:build": "gatsby build",
-    "gatsby:serve": "gatsby serve",
-    "gatsby:clean": "gatsby clean",
+    "gatsby:develop": "sh ./bin/develop.sh",
+    "gatsby:build": "sh ./bin/build.sh",
+    "gatsby:serve": "sh ./bin/serve.sh",
+    "gatsby:clean": "sh ./bin/clean.sh",
     "watch": "tsc -w -p"
   },
   "bin": {
-    "build": "./bin/build",
-    "clean": "./bin/clean",
-    "develop": "./bin/develop",
-    "serve": "./bin/serve"
+    "tsdocgen-gatsby-build": "./bin/build.sh",
+    "tsdocgen-gatsby-clean": "./bin/clean.sh",
+    "tsdocgen-gatsby-develop": "./bin/develop.sh",
+    "tsdocgen-gatsby-serve": "./bin/serve.sh"
   },
   "author": "Zerry Hogan",
   "license": "ISC",
