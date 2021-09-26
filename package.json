@@ -14,7 +14,7 @@
     "watch": "tsc -w -p"
   },
   "bin": {
-    "tsdocgen-gatsby-build": "./bin/build.sh",
+    "tsdocgen-gatsby-build": "./dist/bin/build.js",
     "tsdocgen-gatsby-clean": "./bin/clean.sh",
     "tsdocgen-gatsby-develop": "./bin/develop.sh",
     "tsdocgen-gatsby-serve": "./bin/serve.sh"
