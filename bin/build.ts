@@ -9,10 +9,12 @@ const node_modules = join(cwd, 'node_modules');
 const dist = join(node_modules, 'tsdocgen-output-gatsby', 'dist');
 
 function createSymlink(name: string) {
-    symlinkSync(cwd, join(dist, name), 'file');
+    const dest = join(cwd, name);
+
+    symlinkSync(dest, join(dist, name), 'file');
 
     return () => {
-        unlinkSync(join(cwd, name));
+        unlinkSync(dest);
     }
 }
 
