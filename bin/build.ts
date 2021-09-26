@@ -10,12 +10,20 @@ const dist = join(node_modules, 'tsdocgen-output-gatsby', 'dist');
 
 function createSymlink(name: string) {
     const dest = join(cwd, name);
+    const src = join(dist, name);
 
-    symlinkSync(dest, join(dist, name), 'file');
-
-    return () => {
+    const unlink = () => {
         unlinkSync(dest);
+    };
+
+    try {
+        symlinkSync(src, dest, 'file');
+    } catch (error) {
+        console.log('Unable to create symlink with error', error);
+        unlink();
     }
+
+    return unlink;
 }
 
 const unlinkGatsbyConfig = createSymlink('gatsby-config.js');

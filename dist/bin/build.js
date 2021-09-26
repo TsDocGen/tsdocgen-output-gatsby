@@ -8,10 +8,19 @@ const cwd = process.cwd();
 const node_modules = (0, path_1.join)(cwd, 'node_modules');
 const dist = (0, path_1.join)(node_modules, 'tsdocgen-output-gatsby', 'dist');
 function createSymlink(name) {
-    (0, fs_1.symlinkSync)(cwd, (0, path_1.join)(dist, name), 'file');
-    return () => {
-        (0, fs_1.unlinkSync)((0, path_1.join)(cwd, name));
+    const dest = (0, path_1.join)(cwd, name);
+    const src = (0, path_1.join)(dist, name);
+    const unlink = () => {
+        (0, fs_1.unlinkSync)(dest);
     };
+    try {
+        (0, fs_1.symlinkSync)(src, dest, 'file');
+    }
+    catch (error) {
+        console.log('Unable to create symlink with error', error);
+        unlink();
+    }
+    return unlink;
 }
 const unlinkGatsbyConfig = createSymlink('gatsby-config.js');
 const unlinkGatsbyNode = createSymlink('gatsby-node.js');
