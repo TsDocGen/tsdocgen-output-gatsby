@@ -26,7 +26,10 @@ const unlinkGatsbyConfig = createSymlink('gatsby-config.js');
 const unlinkGatsbyNode = createSymlink('gatsby-node.js');
 const unlinkGatsbyBrowser = createSymlink('gatsby-browser.js');
 const unlinkGatsbySsr = createSymlink('gatsby-ssr.js');
-(0, child_process_1.exec)('gatsby build', () => {
+(0, child_process_1.exec)('gatsby build', (err, stdout, stderr) => {
+    console.log('err', err);
+    console.log('stdout', stdout);
+    console.log('stderr', stderr);
     unlinkGatsbyConfig();
     unlinkGatsbyNode();
     unlinkGatsbyBrowser();

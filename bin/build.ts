@@ -31,7 +31,12 @@ const unlinkGatsbyNode = createSymlink('gatsby-node.js');
 const unlinkGatsbyBrowser = createSymlink('gatsby-browser.js');
 const unlinkGatsbySsr = createSymlink('gatsby-ssr.js');
 
-exec('gatsby build', () => {
+exec('gatsby build', (err, stdout, stderr) => {
+
+    console.log('err', err);
+    console.log('stdout', stdout);
+    console.log('stderr', stderr);
+    
     unlinkGatsbyConfig();
     unlinkGatsbyNode();
     unlinkGatsbyBrowser();
