@@ -2,5 +2,5 @@
 
 import runGatsby from "../scripts/runGatsby";
 
-runGatsby('build');
+runGatsby('develop');
 

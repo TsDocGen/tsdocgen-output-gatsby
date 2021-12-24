@@ -2,5 +2,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const runGatsby_1 = require("../scripts/runGatsby");
-(0, runGatsby_1.default)('build');
-//# sourceMappingURL=build.js.map
+(0, runGatsby_1.default)('clean');
+//# sourceMappingURL=clean.js.map

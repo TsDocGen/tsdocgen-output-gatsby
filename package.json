@@ -15,9 +15,9 @@
   },
   "bin": {
     "tsdocgen-gatsby-build": "./dist/bin/build.js",
-    "tsdocgen-gatsby-clean": "./bin/clean.sh",
-    "tsdocgen-gatsby-develop": "./bin/develop.sh",
-    "tsdocgen-gatsby-serve": "./bin/serve.sh"
+    "tsdocgen-gatsby-clean": "./dist/bin/clean.js",
+    "tsdocgen-gatsby-develop": "./dist/bin/develop.js",
+    "tsdocgen-gatsby-serve": "./dist/bin/serve.js"
   },
   "author": "Zerry Hogan",
   "license": "ISC",

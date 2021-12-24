@@ -21,7 +21,7 @@ const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
       const component = resolve(__dirname, '../components/Page.js');
         
       createPage({
-          path: `${project.name}/${doc.type}/${doc.name}.html`,
+          path: `${projects.length === 1 ? '' : `${project.name}/`}${doc.type}/${doc.name}.html`,
           component: component,
           context: { doc: doc, projectName: project.name },
       });
