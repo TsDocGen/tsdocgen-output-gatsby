@@ -1,6 +1,6 @@
 {
   "name": "tsdocgen-output-gatsby",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Static documentation generator for tsdocgen using gatsby.",
   "main": "dist/index.js",
   "scripts": {
