@@ -6,18 +6,10 @@
   "types": "dist/src/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf dist && tsc -p tsconfig.json",
-    "gatsby:develop": "sh ./bin/develop.sh",
-    "gatsby:build": "sh ./bin/build.sh",
-    "gatsby:serve": "sh ./bin/serve.sh",
-    "gatsby:clean": "sh ./bin/clean.sh",
-    "watch": "tsc -w -p"
+    "build": "rm -rf dist && tsc -p tsconfig.json"
   },
   "bin": {
-    "tsdocgen-gatsby-build": "./dist/bin/build.js",
-    "tsdocgen-gatsby-clean": "./dist/bin/clean.js",
-    "tsdocgen-gatsby-develop": "./dist/bin/develop.js",
-    "tsdocgen-gatsby-serve": "./dist/bin/serve.js"
+    "tsdocgen-gatsby": "./dist/cli.js"
   },
   "author": "Zerry Hogan",
   "license": "ISC",
@@ -37,6 +29,7 @@
     "@types/react-dom": "^17.0.9",
     "antd": "^4.16.13",
     "babel-plugin-styled-components": "^1.13.2",
+    "commander": "^8.3.0",
     "gatsby": "^3.13.1",
     "gatsby-plugin-google-analytics": "^3.14.0",
     "gatsby-plugin-manifest": "^3.14.0",
