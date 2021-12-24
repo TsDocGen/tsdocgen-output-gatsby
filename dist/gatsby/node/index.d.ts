@@ -4,3 +4,4 @@ export declare const TsDocGenGatsbyNode: {
     }, options: import("gatsby").PluginOptions, callback: import("gatsby").PluginCallback<void>) => void | Promise<void>) | undefined;
     sourceNodes: ((args: import("gatsby").SourceNodesArgs, options: import("gatsby").PluginOptions, callback: import("gatsby").PluginCallback<void>) => void | Promise<void>) | undefined;
 };
+//# sourceMappingURL=index.d.ts.map

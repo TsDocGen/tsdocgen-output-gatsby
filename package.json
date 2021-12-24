@@ -2,8 +2,7 @@
   "name": "tsdocgen-output-gatsby",
   "version": "0.0.1",
   "description": "Static documentation generator for tsdocgen using gatsby.",
-  "main": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist && tsc -p tsconfig.json"
@@ -51,5 +50,6 @@
     "react-dom": "^17.0.2",
     "tsdocgen": "https://github.com/TsDocGen/tsdocgen.git",
     "tsdocgen-themes": "https://github.com/TsDocGen/tsdocgen-themes.git"
-  }
+  },
+  "files": ["dist", "package.json", "tsconfig.json"]
 }
