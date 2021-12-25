@@ -14,7 +14,7 @@
   "license": "ISC",
   "devDependencies": {
     "@tsdocgen/core": "^0.0.2",
-    "@tsdocgen/themes": "^0.0.1",
+    "@tsdocgen/themes": "^0.0.2",
     "@types/glob": "^7.1.4",
     "@types/lodash": "^4.14.173",
     "@types/node": "^16.9.1",

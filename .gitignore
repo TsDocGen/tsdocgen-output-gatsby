@@ -3,3 +3,4 @@ yarn.lock
 package-lock.lock
 .cache/
 public
+dist
