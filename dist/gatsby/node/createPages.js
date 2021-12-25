@@ -13,7 +13,7 @@ const createPages = async ({ actions }) => {
         const menu = project.buildMenu();
         console.log('menu', menu);
         project.forEachDoc((doc) => {
-            const component = (0, path_1.resolve)(__dirname, '../components/Page.js');
+            const component = (0, path_1.resolve)(__dirname, '../../components/Page.js');
             createPage({
                 path: `${projects.length === 1 ? '' : `${project.name}/`}${doc.type}/${doc.name}.html`,
                 component: component,

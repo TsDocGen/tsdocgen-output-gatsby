@@ -1,5 +1,5 @@
-import { AntDesignTheme } from 'tsdocgen-themes';
-import type { PageProps as TsDocGenPageProps } from 'tsdocgen';
+import { AntDesignTheme } from '@tsdocgen/themes';
+import type { PageProps as TsDocGenPageProps } from '@tsdocgen/core';
 import { PageProps } from 'gatsby';
 import React from 'react';
 

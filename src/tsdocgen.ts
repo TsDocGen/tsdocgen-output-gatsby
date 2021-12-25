@@ -1,3 +1,3 @@
-import TSDocGen from "tsdocgen";
+import TSDocGen from "@tsdocgen/core";
 
 export const tsDocGenApp = new TSDocGen();

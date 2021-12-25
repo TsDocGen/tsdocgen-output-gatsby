@@ -1,7 +1,7 @@
 import React from 'react';
-import { AntDesignTheme } from 'tsdocgen-themes';
+import { AntDesignTheme } from '@tsdocgen/themes';
 import { WrapPageElementNodeArgs } from 'gatsby';
-import type { PageProps } from 'tsdocgen';
+import type { PageProps } from '@tsdocgen/core';
 
 const Layout: React.FC<WrapPageElementNodeArgs<any, PageProps>> = (args) => {
 
