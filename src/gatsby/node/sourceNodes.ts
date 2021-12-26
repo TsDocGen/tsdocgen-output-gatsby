@@ -5,10 +5,11 @@ const sourceNodes: GatsbyNode['sourceNodes'] = ({ actions, createContentDigest }
     const { createNode } = actions;
 
     const projects = tsDocGenApp.projects;
+    const menu = tsDocGenApp.navigation.menu;
 
     projects.forEach((project) => {
-        Object.keys(project.menu).forEach((key) => {
-            const item = project.menu[key];
+        Object.keys(menu).forEach((key) => {
+            const item =menu[key];
 
             const nodeMeta = {
                 id: `${project.name}-${key}`,
@@ -16,7 +17,7 @@ const sourceNodes: GatsbyNode['sourceNodes'] = ({ actions, createContentDigest }
                 children: [],
                 internal: {
                     type: `Navigation`,
-                    content: JSON.stringify(project.menu[key]),
+                    content: JSON.stringify(menu[key]),
                     contentDigest: createContentDigest(item)
                 }
             };

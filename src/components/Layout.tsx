@@ -5,10 +5,10 @@ import type { PageProps } from '@tsdocgen/core';
 
 const Layout: React.FC<WrapPageElementNodeArgs<any, PageProps>> = (args) => {
 
-    const { element, props } = args;
+    const { element, props: {pageContext: { projectName } } } = args;
 
     return (
-        <AntDesignThemeLayout projectName={props.pageContext.projectName}>
+        <AntDesignThemeLayout projectName={projectName}>
             {element}
         </AntDesignThemeLayout>
     );

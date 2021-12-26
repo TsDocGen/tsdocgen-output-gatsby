@@ -11,16 +11,14 @@ const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
   for (const index in projects) {
     const project = projects[index];
 
-    const menu = project.buildMenu();
-
+    const menu = tsDocGenApp.navigation.menu;
     project.forEachDoc((doc) => {
       const component = resolve(__dirname, '../../components/Page.js');
-      const theme = project.getTheme();
 
       createPage({
           path: `${projects.length === 1 ? '' : `${project.name}/`}${doc.type}/${doc.name}.html`,
           component: component,
-          context: { doc: doc, projectName: project.name, menu, theme },
+          context: { doc: doc, projectName: project.name, menu },
       });
     });
   }

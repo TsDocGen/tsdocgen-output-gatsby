@@ -4,7 +4,7 @@ import { PageProps } from 'gatsby';
 import React from 'react';
 
 const Page: React.FC<PageProps<{}, TsDocGenPageProps>> = ({ pageContext }) => {
-    console.log(pageContext.doc)
+    console.log(pageContext.doc);
     return <AntDesignThemePage {...pageContext} />
 }
 
