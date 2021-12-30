@@ -1,0 +1,4 @@
+const { TsDocGenGatsbyNode } = require('@tsdocgen/output-gatsby/node');
+
+module.exports.createPages = TsDocGenGatsbyNode.createPages;
+module.exports.onCreateWebpackConfig = TsDocGenGatsbyNode.onCreateWebpackConfig;

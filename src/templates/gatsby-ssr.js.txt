@@ -1,0 +1,4 @@
+const { TsDocGenGatsbySSR } = require('@tsdocgen/output-gatsby/ssr');
+
+module.exports.onRenderBody = TsDocGenGatsbySSR.onRenderBody;
+module.exports.wrapPageElement = TsDocGenGatsbySSR.wrapPageElement;
