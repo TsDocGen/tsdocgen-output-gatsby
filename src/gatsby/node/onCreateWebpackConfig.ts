@@ -2,8 +2,7 @@ import { GatsbyNode } from "gatsby";
 import { tsDocGenApp } from "../../tsdocgen";
 
 // Gatsby Webpack Config: https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/webpack.config.js
-const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ actions, getConfig, stage }) => {
-
+const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ actions, getConfig, stage, loaders }) => {
     if (stage === "develop" || stage === "build-javascript") {
         const theme = tsDocGenApp.getCurrentThemePath();
         const config = getConfig();
@@ -15,26 +14,36 @@ const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ actions, g
             // app: https://github.com/gatsbyjs/gatsby/blob/775289fa78042ed6a07e7c0b78938ff59f5bf4fa/packages/gatsby/src/utils/webpack.config.js#L208
             dependOn: stage === "develop" ? 'commons' : 'app',
             import: theme,
-            filename: 'tsdocgen-theme.js'
+            filename: stage === "develop" ? 'tsdocgen-theme.js' : undefined
         }
 
+        const newConfig = {
+            ...config,
+            entry: newEntry,
+        };
+
         if (stage === "develop") {
-            actions.replaceWebpackConfig({
-                ...config,
-                entry: newEntry,
-            });
+            actions.replaceWebpackConfig(newConfig);
         }
 
         if (stage === "build-javascript") {
             actions.replaceWebpackConfig({
-                ...config,
-                entry: newEntry,
+                ...newConfig,
+                module: {
+                    ...config.module,
+                    rules: [
+                        {
+                            test: /\/public\/chunk-map\.json$/,
+                            ...loaders.json(),
+                        },
+                    ].concat(config.module.rules),
+                },
                 optimization: {
-                    ...config.optimization,
+                    ...newConfig.optimization,
                     splitChunks: {
-                        ...config.optimization.splitChunks,
+                        ...newConfig.optimization.splitChunks,
                         cacheGroups: {
-                            ...config.optimization.splitChunks.cacheGroups,
+                            ...newConfig.optimization.splitChunks.cacheGroups,
                             'tsdocgen-core': {
                                 chunks: 'all',
                                 name: 'tsdocgen-core',
