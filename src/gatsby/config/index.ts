@@ -1,1 +1,1 @@
-export { default as TsDocGenGatsbyConfig } from './default';
+export { default as TsDocGenGatsbyConfig } from './config';

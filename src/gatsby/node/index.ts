@@ -1,7 +1,7 @@
 import createPages from './createPages';
-import sourceNodes from './sourceNodes';
+import onCreateWebpackConfig from './onCreateWebpackConfig'
 
 export const TsDocGenGatsbyNode = {
     createPages,
-    sourceNodes
+    onCreateWebpackConfig,
 }

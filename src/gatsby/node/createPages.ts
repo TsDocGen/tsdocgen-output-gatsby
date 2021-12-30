@@ -1,6 +1,9 @@
 import { GatsbyNode } from "gatsby";
 import { resolve } from "path";
 import { tsDocGenApp } from '../../tsdocgen';
+import {  getThemeCache } from '@tsdocgen/core/theme'
+
+const currentTheme = getThemeCache().getCurrentTheme();
 
 /** Creates gatsby pages for generated documentation definitions */
 const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
@@ -18,7 +21,7 @@ const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
       createPage({
           path: `${projects.length === 1 ? '' : `${project.name}/`}${doc.type}/${doc.name}.html`,
           component: component,
-          context: { doc: doc, projectName: project.name, menu },
+          context: { doc: doc, projectName: project.name, menu, theme: currentTheme.name },
       });
     });
   }
