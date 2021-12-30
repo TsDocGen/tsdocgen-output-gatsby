@@ -1,6 +1,7 @@
 {
   "name": "@tsdocgen/output-gatsby",
-  "version": "0.0.66",
+  "version": "0.0.67",
+  "main": "index.js",
   "description": "Static documentation generator for tsdocgen using gatsby.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -55,13 +56,14 @@
   },
   "files": [
     "dist",
-    "browser.d.ts",
-    "browser.js",
-    "config.d.ts",
-    "config.js",
-    "node.d.ts",
-    "node.js",
-    "ssr.d.ts",
-    "ssr.js"
+    "index.js",
+    "gatsby-browser.d.ts",
+    "gatsby-browser.js",
+    "gatsby-config.d.ts",
+    "gatsby-config.js",
+    "gatsby-node.d.ts",
+    "gatsby-node.js",
+    "gatsby-ssr.d.ts",
+    "gatsby-ssr.js"
   ]
 }
