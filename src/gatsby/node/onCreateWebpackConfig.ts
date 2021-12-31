@@ -29,7 +29,7 @@ const rules = (stage: GatsbyStages, config: any, loaders: WebpackLoaders) => {
 }
 
 // Gatsby Webpack Config: https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby/src/utils/webpack.config.js
-const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ actions, getConfig, stage, loaders }) => {
+const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ actions, getConfig, stage, loaders, plugins }) => {
     const tsDocGenConfigPath = tsDocGenApp.getTsDocGenConfigPath();
     const config = getConfig();
 
@@ -47,6 +47,12 @@ const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ actions, g
             ...config.module,
             rules: rules(stage, config, loaders),
         },
+        plugins: [
+            ...config.plugins,
+            plugins.provide({
+                process: require.resolve('process/browser') // required for ansi-colors
+            })
+        ]
     };
 
     if (stage === "develop" || stage === "build-html") {

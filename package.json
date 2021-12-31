@@ -1,6 +1,6 @@
 {
   "name": "@tsdocgen/output-gatsby",
-  "version": "0.0.83",
+  "version": "0.0.84",
   "description": "Static documentation generator for tsdocgen using gatsby.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -28,7 +28,7 @@
     "@loadable/component": "^5.15.2",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@tsdocgen/core": "^0.0.39",
+    "@tsdocgen/core": "^0.0.40",
     "@types/react": "^17.0.21",
     "@types/react-dom": "^17.0.9",
     "antd": "^4.16.13",
@@ -44,6 +44,7 @@
     "gatsby-plugin-styled-components": "^5.4.0",
     "gatsby-source-filesystem": "^4.4.0",
     "husky": "^7.0.2",
+    "process": "^0.11.10",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
